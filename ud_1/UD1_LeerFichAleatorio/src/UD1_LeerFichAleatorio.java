@@ -1,8 +1,8 @@
 /* Realiza la lectura de los registros de un fichero aleatorio.
- * Para la lectura de los datos debemos controlar la posición del puntero dentro del fichero
- * (método getFilePointer), sabiendo el tamaño de cada registro y
- * controlando el tamaño del fichero (método length).
- * El desplazamiento dentro del fichero se realiza con el método seek(posición).
+ * Para la lectura de los datos debemos controlar la posiciï¿½n del puntero dentro del fichero
+ * (mï¿½todo getFilePointer), sabiendo el tamaï¿½o de cada registro y
+ * controlando el tamaï¿½o del fichero (mï¿½todo length).
+ * El desplazamiento dentro del fichero se realiza con el mï¿½todo seek(posiciï¿½n).
  */
 
 import java.io.*;
@@ -22,7 +22,7 @@ public class UD1_LeerFichAleatorio {
    posicion = 0;  //para situarnos al principio
 
    for(;;){  //recorro el fichero. El posicionamiento empieza en 0 y hay que ir sumando 36
-	   // el metodo seek(long posición) coloca el puntero del fichero en una posición determinada desde el principio
+	   // el metodo seek(long posiciï¿½n) coloca el puntero del fichero en una posiciï¿½n determinada desde el principio
 	   file.seek(posicion); //nos posicionamos en posicion
 	   id = file.readInt();   // obtengo id de empleado	  	  
       
@@ -42,12 +42,12 @@ public class UD1_LeerFichAleatorio {
 				   id,   apellidos.trim(), dep, salario);     
 	
 	   //me posiciono para el sig empleado, cada empleado ocupa 36 bytes
-	   posicion= posicion + 36;	 
+	   posicion= (int) file.getFilePointer(); // o Usar el tamaÃ±o del registro
 
 	   //Si he recorrido todos los bytes salgo del for
-	   //el método getFilePointer() devuelve la posición actual del puntero del fichero
-	   //el método length() devuelve el tamaño del fichero en bytes. Marca el ficnal del fichero
-	   if (file.getFilePointer() == file.length()) break; //getFilePointer() devuelve la posición actual del puntero
+	   //el mï¿½todo getFilePointer() devuelve la posiciï¿½n actual del puntero del fichero
+	   //el mï¿½todo length() devuelve el tamaï¿½o del fichero en bytes. Marca el ficnal del fichero
+	   if (file.getFilePointer() == file.length()) break; //getFilePointer() devuelve la posiciï¿½n actual del puntero
    
    	}//fin bucle for 
    	
