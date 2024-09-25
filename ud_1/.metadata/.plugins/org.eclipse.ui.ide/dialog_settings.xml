@@ -12,6 +12,8 @@
 		<item key="SmartImportRootWizardPage.STORE_NESTED_PROJECTS" value="true"/>
 		<item key="SmartImportRootWizardPage.STORE_CONFIGURE_NATURES" value="true"/>
 		<list key="org.eclipse.ui.internal.wizards.datatransfer.SmartImportRootWizardPage.knownSources">
+			<item value="C:\Users\Alumno\Desktop\acceso_a_datos\ud_1\UD1_LeerFichAleatorioUnReg"/>
+			<item value="C:\Users\Alumno\Desktop\acceso_a_datos\ud_1\UD1_EscribirFichAleatorioUnReg"/>
 			<item value="C:\Users\Alumno\Desktop\acceso_a_datos\ud_1\UD1_LeerFichAleatorio"/>
 			<item value="C:\Users\Alumno\Desktop\acceso_a_datos\ud_1\UD1_EscribirFichAleatorio"/>
 			<item value="C:\Users\Alumno\Desktop\acceso_a_datos\ud_1\UD1_EscribirFichData"/>

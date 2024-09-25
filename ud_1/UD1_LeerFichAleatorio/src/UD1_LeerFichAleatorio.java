@@ -10,7 +10,7 @@ import java.io.*;
 public class UD1_LeerFichAleatorio {
   public static void main(String[] args) throws IOException {     
    
-   File fichero = new File("AleatorioEmple.dat");
+   File fichero = new File("AleatorioEmple720.dat");
    
    //declara el fichero de acceso aleatorio
    RandomAccessFile file = new RandomAccessFile(fichero, "r");
@@ -47,7 +47,9 @@ public class UD1_LeerFichAleatorio {
 	   //Si he recorrido todos los bytes salgo del for
 	   //el m�todo getFilePointer() devuelve la posici�n actual del puntero del fichero
 	   //el m�todo length() devuelve el tama�o del fichero en bytes. Marca el ficnal del fichero
+	   //if (file.getFilePointer() == 108) break; // Leer solo los 3 primeros datos
 	   if (file.getFilePointer() == file.length()) break; //getFilePointer() devuelve la posici�n actual del puntero
+
    
    	}//fin bucle for 
    	
