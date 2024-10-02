@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ListaPersonasMunicipio>
+  <DatosPersona>
+    <nombre>Ana</nombre>
+    <edad>14</edad>
+  </DatosPersona>
+  <DatosPersona>
+    <nombre>Luis Miguel</nombre>
+    <edad>15</edad>
+  </DatosPersona>
+  <DatosPersona>
+    <nombre>Alicia</nombre>
+    <edad>13</edad>
+  </DatosPersona>
+  <DatosPersona>
+    <nombre>Pedro</nombre>
+    <edad>15</edad>
+  </DatosPersona>
+</ListaPersonasMunicipio>

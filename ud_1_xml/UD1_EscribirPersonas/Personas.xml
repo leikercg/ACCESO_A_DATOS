@@ -1,0 +1,38 @@
+<ListaPersonasMunicipio>
+  <DatosPersona>
+    <Nombre__alumno>Ana</Nombre__alumno>
+    <Edad__alumno>14</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Luis Miguel</Nombre__alumno>
+    <Edad__alumno>15</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Alicia</Nombre__alumno>
+    <Edad__alumno>13</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Pedro</Nombre__alumno>
+    <Edad__alumno>15</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Manuel</Nombre__alumno>
+    <Edad__alumno>16</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Andrés</Nombre__alumno>
+    <Edad__alumno>12</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Julio</Nombre__alumno>
+    <Edad__alumno>16</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>Antonio</Nombre__alumno>
+    <Edad__alumno>14</Edad__alumno>
+  </DatosPersona>
+  <DatosPersona>
+    <Nombre__alumno>María Jesús</Nombre__alumno>
+    <Edad__alumno>13</Edad__alumno>
+  </DatosPersona>
+</ListaPersonasMunicipio>

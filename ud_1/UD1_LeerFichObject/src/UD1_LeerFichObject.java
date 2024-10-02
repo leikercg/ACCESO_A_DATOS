@@ -1,5 +1,5 @@
 /* Lee los objetos desde un archivo de datos.
- * Al leer los datos con el método readObject hace un cast a la clase del Objeto, pe. (Persona)
+ * Al leer los datos con el mï¿½todo readObject hace un cast a la clase del Objeto, pe. (Persona)
 */
 
 import java.io.*;
@@ -8,7 +8,7 @@ public class UD1_LeerFichObject {
 	
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Persona persona; // defino la variable persona
-		File fichero = new File("E:\\Mis_documentos\\_Curso 2021-22\\486-Acceso a datos\\miAccesoaDatos\\UD1 - Manejo de ficheros\\Proyectos UD1\\UD1_EscribirFichObject2\\FichPersona2.dat");
+		File fichero = new File("FichPersona.dat");
 		ObjectInputStream dataIS = new ObjectInputStream(new FileInputStream(fichero));
 
 		int i = 1;

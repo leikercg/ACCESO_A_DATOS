@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<libreria>
+    <nombre>Libreria_1</nombre>
+    <libros>
+        <libro isbn="12345678">
+            <titulo>Titulo1</titulo>
+            <autor>Autor1</autor>
+        </libro>
+        <libro isbn="87654321">
+            <titulo>Titulo2</titulo>
+            <autor>Autor2</autor>
+        </libro>
+    </libros>
+</libreria>
