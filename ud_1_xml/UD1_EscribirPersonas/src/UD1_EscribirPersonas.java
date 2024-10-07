@@ -1,7 +1,7 @@
 /* Crea una lista de objetos (ListaPersonas) del tipo  (clase) Persona,
  * que obtiene leyendo desde un fichero .dat que incluye los datos.
- * Después convierte la lista de objetos (ListaPersonas) en un fichero XML, es decir,  
- * serializa objetos Java a XML. Lo hace empleando la librería XStream => https://x-stream.github.io/download.html
+ * Despuï¿½s convierte la lista de objetos (ListaPersonas) en un fichero XML, es decir,  
+ * serializa objetos Java a XML. Lo hace empleando la librerï¿½a XStream => https://x-stream.github.io/download.html
  */
 
 import java.io.*;
@@ -16,7 +16,7 @@ public class UD1_EscribirPersonas {
     FileInputStream filein = new FileInputStream(fichero);//flujo de entrada   
     //conecta el flujo de bytes al flujo de datos de tipo objeto
     ObjectInputStream dataIS = new ObjectInputStream(filein);      
-    System.out.println ("Comienza el proceso de creación del fichero a XML ...");
+    System.out.println ("Comienza el proceso de creaciï¿½n del fichero a XML ...");
 				
     //Creamos un objeto Lista de Personas
     ListaPersonas listaper = new ListaPersonas();	 
@@ -25,7 +25,7 @@ public class UD1_EscribirPersonas {
       while (true) { //lectura de los datos de tipo objeto del fichero
         //leer una Persona
 	    Persona persona= (Persona) dataIS.readObject();    
-	    listaper.add(persona); //añadir persona a la lista  
+	    listaper.add(persona); //aï¿½adir persona a la lista  
       	}
       
     }catch (EOFException eo) {}
@@ -36,7 +36,7 @@ public class UD1_EscribirPersonas {
 		XStream xstream = new XStream();   
 		//cambiar de nombre a las etiquetas XML
 		xstream.alias("ListaPersonasMunicipio", ListaPersonas.class);	
-		xstream.alias("DatosPersona", Persona.class);
+		xstream.alias("DatosPersona", Persona.class) ;
 		
 		xstream.aliasField("Nombre_alumno", Persona.class, "nombre");
 		xstream.aliasField("Edad_alumno", Persona.class, "edad");

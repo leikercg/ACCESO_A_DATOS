@@ -6,9 +6,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="F:/_Curso 2021-22/486-Acceso a datos/miAccesoaDatos/UD1 - Manejo de ficheros/Proyectos UD1_XML/jaxb-ri-2.3.1/jaxb-ri/mod/istack-commons-runtime.jar"/>
-	<classpathentry kind="lib" path="F:/_Curso 2021-22/486-Acceso a datos/miAccesoaDatos/UD1 - Manejo de ficheros/Proyectos UD1_XML/jaxb-ri-2.3.1/jaxb-ri/mod/javax.activation-api.jar"/>
-	<classpathentry kind="lib" path="F:/_Curso 2021-22/486-Acceso a datos/miAccesoaDatos/UD1 - Manejo de ficheros/Proyectos UD1_XML/jaxb-ri-2.3.1/jaxb-ri/mod/jaxb-api.jar"/>
-	<classpathentry kind="lib" path="F:/_Curso 2021-22/486-Acceso a datos/miAccesoaDatos/UD1 - Manejo de ficheros/Proyectos UD1_XML/jaxb-ri-2.3.1/jaxb-ri/mod/jaxb-runtime.jar"/>
+	<classpathentry kind="lib" path="Libreria_JaxB/istack-commons-runtime.jar"/>
+	<classpathentry kind="lib" path="Libreria_JaxB/javax.activation-api.jar"/>
+	<classpathentry kind="lib" path="Libreria_JaxB/jaxb-api.jar"/>
+	<classpathentry kind="lib" path="Libreria_JaxB/jaxb-runtime.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

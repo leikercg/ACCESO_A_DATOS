@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listadepartameentosssssssssssss>
+    <departamentos>
+        <departamento dep="10">
+            <nombre>INFORMATICA</nombre>
+            <loc>MADRID</loc>
+        </departamento>
+        <departamento dep="15">
+            <nombre>MARKETING</nombre>
+            <loc>SEVILLA</loc>
+        </departamento>
+        <departamento dep="20">
+            <nombre>CONTABILIDAD</nombre>
+            <loc>LEON</loc>
+        </departamento>
+        <departamento dep="25">
+            <nombre>VENTAS</nombre>
+            <loc>TOLEDO</loc>
+        </departamento>
+        <departamento dep="30">
+            <nombre>COMPRAS</nombre>
+            <loc>GUADALAJARA</loc>
+        </departamento>
+        <departamento dep="35">
+            <nombre>PERSONAL</nombre>
+            <loc>CUENCA</loc>
+        </departamento>
+        <departamento dep="40">
+            <nombre>RECURSOS</nombre>
+            <loc>OVIEDO</loc>
+        </departamento>
+        <departamento dep="45">
+            <nombre>TRANSPORTE</nombre>
+            <loc>BILBAO</loc>
+        </departamento>
+        <departamento dep="50">
+            <nombre>MANTENIMIENTO</nombre>
+            <loc>VALENCIA</loc>
+        </departamento>
+    </departamentos>
+</listadepartameentosssssssssssss>

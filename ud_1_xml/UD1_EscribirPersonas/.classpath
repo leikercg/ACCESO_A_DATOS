@@ -6,7 +6,7 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="F:/_Curso 2021-22/486-Acceso a datos/miAccesoaDatos/UD1 - Manejo de ficheros/Proyectos UD1_XML/xstream-1.4.18/lib/xstream-1.4.18.jar" sourcepath="/UD1_LeerPersonas/xstream"/>
-	<classpathentry kind="lib" path="F:/_Curso 2021-22/486-Acceso a datos/miAccesoaDatos/UD1 - Manejo de ficheros/Proyectos UD1_XML/xstream-1.4.18/lib/xstream/kxml2-min-2.3.0.jar"/>
+	<classpathentry kind="lib" path="Libreria/kxml2-min-2.3.0.jar"/>
+	<classpathentry kind="lib" path="Libreria/xstream-1.4.18.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
