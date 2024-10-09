@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cine>
+	<nombre>Cine Gran Via</nombre>
+	<peliculas>
+		<pelicula genero="Ciencia Ficcion">
+			<titulo>La llegada</titulo>
+			<director>Denis Villeneuve</director>
+		</pelicula>
+		<pelicula genero="Animacion">
+			<titulo>Mi vecino Totoro</titulo>
+			<director>Hayao Miyazaki</director>
+		</pelicula>
+		<pelicula genero="Ciencia Ficcion">
+			<titulo>Interstellar</titulo>
+			<director>Christopher Nolan</director>
+		</pelicula>
+	</peliculas>
+</cine>

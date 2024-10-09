@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cine>
+    <nombre>CineReordenado</nombre>
+    <peliculas>
+        <pelicula director="Denis Villeneuve" genero="Ciencia Ficcion">
+            <titulo>La llegada</titulo>
+        </pelicula>
+        <pelicula director="Hayao Miyazaki" genero="Animacion">
+            <titulo>Mi vecino Totoro</titulo>
+        </pelicula>
+        <pelicula director="Christopher Nolan" genero="Ciencia Ficcion">
+            <titulo>Interstellar</titulo>
+        </pelicula>
+    </peliculas>
+</cine>
