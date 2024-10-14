@@ -1,7 +1,7 @@
 /* Define el objeto Persona que implementa la interfaz Serializable y
  * el programa escribe en un fichero de datos los atributos correspondientes al objeto Persona.
  * Cuando  adjuntamos objetos a un fichero existente aparece un problema java.io.StreamCorruptedException
- * porque se añade una cabecera al fichero.
+ * porque se aï¿½ade una cabecera al fichero.
  * Para que no se escriba la cabecera es necesario sobreescribir (extends) la clase ObjectOutputStream
  * que en mi caso lo he hecho creando la clase MiObjectOutputStream 
  * En el programa, Si el fichero no existe se crea un objeto ObjectOutputStream que crea cabecera,
@@ -27,7 +27,7 @@ class MiObjectOutputStream extends ObjectOutputStream{
     }
 }	
 
-
+//@@@@@@@@@@@@ PARA SOBREESCRIBIR MUCHAS VECES SIN REESCRIBIR LA CABECERA AL LEERLO, EN CASO DE NO EXISTIR LO CREA
 
 public class UD1_EscribirFichObject2 {
 	
@@ -42,18 +42,18 @@ public class UD1_EscribirFichObject2 {
 	   FileOutputStream fileout;
 	   fileout = new FileOutputStream(fichero); // Al crear el flujo de salida crea el archivo
 	   //conecta el flujo de bytes al flujo de datos
-	   dataOS = new ObjectOutputStream(fileout); // Este constructor añade cabecera al fichero de objetos
+	   dataOS = new ObjectOutputStream(fileout); // Este constructor aï¿½ade cabecera al fichero de objetos
 	   System.out.println("EL FICHERO NO EXISTE"); 
    } else {
-	   //conecta el flujo de bytes al flujo de datos pero sin añadir cabecera al fichero de objetos
-	   //porque el archivo ya tenía cabecera
+	   //conecta el flujo de bytes al flujo de datos pero sin aï¿½adir cabecera al fichero de objetos
+	   //porque el archivo ya tenï¿½a cabecera
 	   System.out.println("EL FICHERO YA EXISTE"); 
 	   dataOS = new MiObjectOutputStream (new FileOutputStream(fichero, true));//crea el flujo de salida
    }
     
    
-   //String nombres[] = {"Ana","Luis Miguel","Alicia","Pedro","Manuel","Andrés",
-   //                    "Julio","Antonio","María Jesús","Ana2","Luis Miguel2","Alicia2","Pedro2","Manuel2","Andrés2"};
+   //String nombres[] = {"Ana","Luis Miguel","Alicia","Pedro","Manuel","Andrï¿½s",
+   //                    "Julio","Antonio","Marï¿½a Jesï¿½s","Ana2","Luis Miguel2","Alicia2","Pedro2","Manuel2","Andrï¿½s2"};
 
    String nombres[] = {"Nombre1", "Nombre2", "Nombre3"};
    

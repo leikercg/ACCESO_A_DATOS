@@ -1,5 +1,5 @@
 /*/* Escribe en un fichero de datos tipos primitivos (int, string)
- * que están en un array de elementos del tipo correspondiente.
+ * que estï¿½n en un array de elementos del tipo correspondiente.
  */
 
 import java.io.*;
@@ -9,10 +9,12 @@ public class UD1_EscribirFichData {
  
 	  File fichero = new File("FichData.dat");
 	  DataOutputStream dataOS = new DataOutputStream(new FileOutputStream(fichero));
+	  //	  DataOutputStream dataOS = new DataOutputStream(new FileOutputStream(fichero, true)); PARA AÃ‘ADIR EN VEZ DE BORRAR
+
 
  
-   String nombres[] = {"Ana","Luis Miguel","Alicia","Pedro","Manuel","Andrés",
-                       "Julio","Antonio","María Jesús"};
+   String nombres[] = {"Ana","Luis Miguel","Alicia","Pedro","Manuel","Andrï¿½s",
+                       "Julio","Antonio","Marï¿½a Jesï¿½s"};
 					   
    int edades[] = {14,15,13,15,16,12,16,14,13};
 	
