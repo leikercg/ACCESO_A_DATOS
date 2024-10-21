@@ -1,4 +1,4 @@
-// Conexión a MySQL en XAMPP
+// Conexiï¿½n a MySQL en XAMPP
 
 // Paso 1. Importar las clases necesarias
 import java.sql.*;
@@ -13,8 +13,8 @@ public class UD2_JDBC_Xampp {
 			
 			// Paso 3. Identifico el origen de datos
 			String url = "jdbc:mysql://localhost/ud2_xampp";
-			String usuario = "alberto";
-			String passwd = "alberto";
+			String usuario = "leiker";
+			String passwd = "leiker";
 			
 			// Paso 4. Crea objeto Connection
 			Connection conexion = DriverManager.getConnection(url,usuario,passwd);

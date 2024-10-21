@@ -42,8 +42,11 @@ public class Ejer2_5 {
 		 * // Almacenar objetos Empleados en la base de datos db.store(e1);
 		 * db.store(e2); db.store(e3); db.store(e4);
 		 */
-		
-		Departamento dpto = new Departamento(null, null,null);
+
+		// Comprobar que existe el departamento 20.
+		int i = 20;
+		Departamento dpto = new Departamento(i, null, null);
+
 		ObjectSet<Departamento> result = db.queryByExample(dpto);
 		if (result.size() == 0)
 			System.out.println("No existen Registros de DEPARTAMENTOS..");
@@ -52,9 +55,24 @@ public class Ejer2_5 {
 
 			while (result.hasNext()) {
 				Departamento p = result.next();
-				System.out.printf("Número: %d, Nombre: %s, Ciudad: %s %n", p.getDept_no(), p.getDept_nombre(), p.getDept_loc());
+				System.out.printf("Número: %d, Nombre: %s, Ciudad: %s %n", p.getDept_no(), p.getDept_nombre(),
+						p.getDept_loc());
+			}
+			
+		}
+		Empleado emp = new Empleado(null, null, null, null, null, null, null, i);
+		ObjectSet<Empleado> result1 = db.queryByExample(emp);
+
+		if (result1.size() == 0) {
+			System.out.println("No existen registros de empleado del departamento " + i);
+		} else {
+			while (result1.hasNext()) {
+				Empleado e = result1.next();
+				System.out.printf("Numero de empleado: %d, apellido: %s, salario: %.2f %n", e.getEmp_no(),
+						e.getApellido(), e.getSalario());
 			}
 		}
+
 		db.close(); // cerrar base de datos
 
 	}// fin de main

@@ -5,6 +5,10 @@ public class Departamento {
 	private String dept_nombre;
 	private String dept_loc;
 
+	public Departamento() {
+		super();
+	}
+
 	public Departamento(Integer dept_no, String dept_nombre, String dept_loc) {
 		super();
 		this.dept_no = dept_no;
