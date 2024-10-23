@@ -1,4 +1,4 @@
-// Conexión a BD Apache Derby
+// Conexiï¿½n a BD Apache Derby
 
 // Paso 1. Importar las clases necesarias
 
@@ -13,7 +13,9 @@ public class UD2_JDBC_ApacheDerby {
 			Class.forName("org.apache.derby.jdbc.EmbeddedDriver");
 			
 			// Paso 3. Identifico el origen de datos
-			String url = "jdbc:derby:D:/Examen1EVA/ud2_derby.db";
+			//String url = "jdbc:derby:D:BBDDs/Apache_derby/db-derby-10.12.1.1-bin/ud2/derby.db";
+			
+			String url ="jdbc:derby:derby.db";
 			
 			// Paso 4. Crea objeto Connection
 			Connection conexion = DriverManager.getConnection(url);
@@ -22,7 +24,7 @@ public class UD2_JDBC_ApacheDerby {
 			Statement sentencia = conexion.createStatement();
 			
 			// Pasos 6 y 7. Ejecuta la consulta y recupera los datos en el ResulSet
-			String sql = "SELECT * FROM monumentos";
+			String sql = "SELECT * FROM departamentos";
 			ResultSet res = sentencia.executeQuery(sql);
 			
 			// Hace el tratamiento de los datos. En este caso los imprime recorriendo el ResultSet
