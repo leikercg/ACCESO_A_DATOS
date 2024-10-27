@@ -19,7 +19,7 @@ public class Libro {
 	public Libro() {
 	} // Constructor sin par�metros
 
-	@XmlAttribute(name = "isbn") // declara que isbn es un atributo
+	@XmlAttribute(name = "isbn") // declara que isbn es un atributo, si no lo encuetra saldrá nulll
 	public String getIsbn() {
 		return isbn;
 	}

@@ -39,11 +39,11 @@ public class UD1_CrearEmpleadoXml {
     	 /* Realiza la lectura de un registro del fichero aleatorio */
     	 file.seek(posicion); //nos posicionamos 
     	 id=file.readInt();   // obtengo id de empleado	  	  
-    	 for (int i = 0; i < apellido.length; i++) { // lee los caracteres del apellido
+    	 for (int i = 0; i < apellido.length; i++) { // lee los caracteres del apellido, la longitud del []
     		 aux = file.readChar();
     		 apellido[i] = aux;    
     	 }   
-    	 String apellidos = new String(apellido);
+    	 String apellidos = new String(apellido); // convierte el array de char en string
     	 dep = file.readInt();
     	 salario = file.readDouble();  
 	   

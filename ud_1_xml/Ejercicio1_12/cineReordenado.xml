@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<cine>
+    <nombre>Cinepolis</nombre>
+    <peliculas>
+        <pelicula genero="Miedo">
+            <director>Director1</director>
+            <titulo>Titulo1</titulo>
+        </pelicula>
+    </peliculas>
+</cine>

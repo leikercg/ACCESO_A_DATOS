@@ -1,0 +1,31 @@
+Principales métodos de ArrayList
+Añadir elementos:
+
+add(elemento): Añade el elemento al final de la lista.
+add(index, elemento): Inserta el elemento en la posición indicada.
+Acceder a elementos:
+
+get(index): Retorna el elemento en la posición especificada.
+Modificar elementos:
+
+set(index, elemento): Reemplaza el elemento en la posición especificada con el nuevo elemento.
+Eliminar elementos:
+
+remove(index): Elimina el elemento en la posición indicada.
+remove(Object elemento): Elimina la primera ocurrencia del elemento en la lista.
+Buscar elementos:
+
+indexOf(elemento): Retorna el índice de la primera ocurrencia del elemento, o -1 si no está presente.
+contains(elemento): Retorna true si el elemento está en la lista, de lo contrario, false.
+Propiedades de la lista:
+
+size(): Retorna el número de elementos en la lista.
+isEmpty(): Retorna true si la lista está vacía, de lo contrario, false.
+Convertir a un arreglo:
+
+toArray(): Convierte la lista a un array de objetos (Object[]).
+toArray(T[] a): Convierte la lista a un array de tipo T[].
+Otros:
+
+clear(): Elimina todos los elementos de la lista.
+subList(fromIndex, toIndex): Retorna una vista de la parte de la lista entre fromIndex y toIndex.

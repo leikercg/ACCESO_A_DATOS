@@ -8,22 +8,22 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
  
-@XmlRootElement(name = "libreria") // Le indicamos que la clase Libreria es el elemento raíz <libreria>
-@XmlType(propOrder= {"nombre", "libros"})
+@XmlRootElement(name = "libreria") // Le indicamos que la clase Libreria es el elemento raï¿½z <libreria>
+@XmlType(propOrder= {"nombre", "libros"}) // Si le cambiamos el orden a esto se escribe en orden difetente.
 
 public class Libreria {
     private String nombre;
-    private ArrayList<Libro> libros = new ArrayList<Libro>(); // Colección para guardar todos los objetos Libro
+    private ArrayList<Libro> libros = new ArrayList<Libro>(); // Colecciï¿½n para guardar todos los objetos Libro
    
     public Libreria(){}  			// Constructor sin argumentos
     
-    @XmlElement(name="nombre")		// declara que nombre es un elemento
-    public String getNombre() { return nombre; }  
-    public void setNombre(String nombre) { this.nombre = nombre; }
-      
+  
     @XmlElementWrapper(name = "libros") // declara que el ArrayList libros en el fichero XML es el wrapper <libros>
     @XmlElement(name = "libro")			// declara que los elementos del ArrayList libros en el fichero XML son elementos <libro>
     public ArrayList<Libro> getLibros() { return libros; }
     public void setLibros(ArrayList<Libro> libros) { this.libros = libros; }
     
+    @XmlElement(name="nombre")		// declara que nombre es un elemento
+    public String getNombre() { return nombre; }  
+    public void setNombre(String nombre) { this.nombre = nombre; }
  }

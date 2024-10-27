@@ -9,12 +9,12 @@ import javax.xml.bind.annotation.XmlElementWrapper;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
  
-@XmlRootElement(name = "libreria") // Le indicamos que la clase Libreria es el elemento raíz <libreria>
+@XmlRootElement(name = "libreria") // Le indicamos que la clase Libreria es el elemento raï¿½z <libreria>
 @XmlType(propOrder= {"nombre", "libros"})
 
 public class Libreria {
     private String nombre;
-    private ArrayList<Libro> libros = new ArrayList(); // Colección para guardar todos los objetos Libro
+    private ArrayList<Libro> libros = new ArrayList(); // Colecciï¿½n para guardar todos los objetos Libro
    
     public Libreria(){}  			// Constructor sin argumentos
     

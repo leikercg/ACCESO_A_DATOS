@@ -1,5 +1,5 @@
 /* Realiza la lectura de un fichero XML, utilizando el parser SAX.
- * Los métodos para tratar el archivo se definen sobrescribiendo la clase DefaultHandler
+ * Los mï¿½todos para tratar el archivo se definen sobrescribiendo la clase DefaultHandler
  */
 
 import java.io.*;
@@ -31,8 +31,8 @@ public class UD1_PruebaSax2 {
 
 }//fin PruebaSax1
 
-/* Se define los métodos a usar en el programa (creamos el Parser)
- * sobreescribiendo los métodos de la clase DefaultHandler
+/* Se define los mï¿½todos a usar en el programa (creamos el Parser)
+ * sobreescribiendo los mï¿½todos de la clase DefaultHandler
  */
 class GestionContenido extends DefaultHandler {	 
 	    public GestionContenido() {
@@ -51,7 +51,7 @@ class GestionContenido extends DefaultHandler {
 	        System.out.printf("\t Fin Elemento: %s %n", nombre);
 	    }	
 	    public void characters(char[] ch, int inicio, int longitud) throws SAXException {
-		   String car=new String(ch, inicio, longitud);          //quitar saltos de línea	
+		   String car=new String(ch, inicio, longitud);          //quitar saltos de lï¿½nea	
 		   car = car.replaceAll("[\t\n]","");	   
 		   System.out.printf ("\t  Caracteres: %s %n", car);		
 	    }	

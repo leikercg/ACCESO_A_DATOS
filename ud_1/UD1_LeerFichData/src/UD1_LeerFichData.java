@@ -10,7 +10,7 @@ import java.io.*;
 
 public class UD1_LeerFichData {
   public static void main(String[] args) throws IOException {    
-	File fichero = new File("FichData.dat");
+	File fichero = new File("FichData2.dat");
 	DataInputStream dataIS = new DataInputStream(new FileInputStream(fichero));
 
    String n;

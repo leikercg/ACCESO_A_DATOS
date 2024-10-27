@@ -8,7 +8,7 @@ import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType; 
 
-@XmlRootElement(name = "libro") // Le indicamos el elemento raíz
+@XmlRootElement(name = "libro") // Le indicamos el elemento raï¿½z
 @XmlType(propOrder = {"isbn", "titulo", "autor"}) // Indicamos el orden de las propiedades = etiquetas
 
 public class Libro { 
@@ -16,9 +16,9 @@ public class Libro {
 	private String titulo;
     private String autor;
     
-	public Libro() {}					// Constructor sin parámetros
+	public Libro() {}					// Constructor sin parï¿½metros
     
-	@XmlAttribute(name = "isbn")		// declara que isbn es un atributo 
+	@XmlAttribute(name = "isbn")		// declara que isbn es un atributo // este nombre serÃ¡ el que aparezaca en la etiqueta
 	public String getIsbn() { return isbn;}
 	public void setIsbn(String isbn) {  this.isbn = isbn;  }
 	
