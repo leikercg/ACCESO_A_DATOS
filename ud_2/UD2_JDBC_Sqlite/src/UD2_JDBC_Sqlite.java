@@ -1,4 +1,4 @@
-// Conexión a BD Sqlite
+// Conexiï¿½n a BD Sqlite
 
 // Paso 1. Importar las clases necesarias
 import java.sql.*;
@@ -11,8 +11,9 @@ public class UD2_JDBC_Sqlite {
 			// Paso 2. Carga el driver JDBC
 			Class.forName("org.sqlite.JDBC");
 			
-			// Paso 3. Identifico el origen de datos
-			String url = "jdbc:sqlite:D:/BBDD/ud2_sqlite.db";
+			// Paso 3. Identifico el origen de datos					@@@@@@@@@La base de datos es un fichero
+			//String url = "jdbc:sqlite:D:BBDDs/Sqlite/ud2_sqlite.db";
+			String url = "jdbc:sqlite:ud2_sqlite.db";
 			
 			// Paso 4. Crea objeto Connection
 			Connection conexion = DriverManager.getConnection(url);

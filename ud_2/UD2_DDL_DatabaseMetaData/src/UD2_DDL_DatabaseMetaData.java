@@ -1,4 +1,4 @@
-/* Obtiene información de la base de datos y de las tablas y vistas */
+/* Obtiene informaciï¿½n de la base de datos y de las tablas y vistas */
 
 import java.sql.*;
 
@@ -9,30 +9,30 @@ public class UD2_DDL_DatabaseMetaData {
 	  {
 		 Class.forName("com.mysql.jdbc.Driver"); // Cargar el driver
 		 //Establecemos la conexion con la BD
-         Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+         Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker");
   
          DatabaseMetaData dbmd = conexion.getMetaData(); // Creamos objeto DatabaseMetaData
   		 ResultSet resul = null;
 		 
-  		 // USa varios métodos del objeto DatabaseMetaData para obtener inf
+  		 // USa varios mï¿½todos del objeto DatabaseMetaData para obtener inf
   		 String nombre  = dbmd.getDatabaseProductName();
   		 String driver  = dbmd.getDriverName();
   		 String url     = dbmd.getURL(); 
   		 String usuario = dbmd.getUserName() ;
 		 		 
   		 System.out.println("===================================");
-  		 System.out.println("INFORMACIÓN SOBRE LA BASE DE DATOS:");
+  		 System.out.println("INFORMACIï¿½N SOBRE LA BASE DE DATOS:");
   		 System.out.println("===================================");
   		 System.out.printf("Nombre : %s %n", nombre );
   		 System.out.printf("Driver : %s %n", driver );
   		 System.out.printf("URL    : %s %n", url );
   		 System.out.printf("Usuario: %s %n", usuario );
 		 
-         //Obtener información de las tablas y vistas que hay 		       
+         //Obtener informaciï¿½n de las tablas y vistas que hay 		       
          resul = dbmd.getTables("ud2_xampp", null , null, null);
 		 
          System.out.println("===================================");
-         System.out.println("INFORMACIÓN SOBRE LAS TABLAS Y VISTAS:");
+         System.out.println("INFORMACIï¿½N SOBRE LAS TABLAS Y VISTAS:");
   		 System.out.println("===================================");
          while (resul.next()) {			   
 			     String catalogo = resul.getString(1);//columna 1 

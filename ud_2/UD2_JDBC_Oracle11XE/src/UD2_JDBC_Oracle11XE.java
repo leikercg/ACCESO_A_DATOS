@@ -1,4 +1,4 @@
-// Conexión a servidor Oracle 11g XE
+// Conexiï¿½n a servidor Oracle 11g XE
 
 // Paso 1. Importar las clases necesarias
 import java.sql.*;
@@ -13,8 +13,8 @@ public class UD2_JDBC_Oracle11XE {
 			
 			// Paso 3. Identifico el origen de datos
 			String url = "jdbc:oracle:thin:@localhost:1521:XE";
-			String usuario = "ALBERTO";
-			String passwd = "Ad1rectory";
+			String usuario = "leiker";
+			String passwd = "leiker";
 			
 			// Paso 4. Crea objeto Connection
 			Connection conexion = DriverManager.getConnection(url,usuario,passwd);

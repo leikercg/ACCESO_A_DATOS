@@ -1,5 +1,5 @@
-/* Conexión a BD SQLServer.
- * Se debe añadir driver JDBC según el JRE, por ejemplo => mssql-jdbc-9.4.0.jre8.jar 
+/* Conexiï¿½n a BD SQLServer.
+ * Se debe aï¿½adir driver JDBC segï¿½n el JRE, por ejemplo => mssql-jdbc-9.4.0.jre8.jar 
  */
 
 import java.sql.Connection;
@@ -14,13 +14,13 @@ public class UD2_JDBC_SQLServer {
 		
 		try {
 			
-			// Paso 2. Carga el driver JDBC y probar si JDBC está bien instalado
+			// Paso 2. Carga el driver JDBC y probar si JDBC estï¿½ bien instalado
 			Class.forName("com.microsoft.sqlserver.jdbc.SQLServerDriver");
 			
 			// Paso 3. Identifico el origen de datos
-			String url = "jdbc:sqlserver://IRENE-LAPTOP\\SQLEXPRESS;databaseName=ud2_sqlserver";
+			String url = "jdbc:sqlserver:DESKTOP-MDAC0QE\\SQLEXPRESS";
 			String usuario = "sa";
-			String passwd = "Ad1rectory";
+			String passwd = "alumno";
 			
 			// Paso 4. Crea objeto Connection
 			Connection conexion = DriverManager.getConnection(url,usuario,passwd);

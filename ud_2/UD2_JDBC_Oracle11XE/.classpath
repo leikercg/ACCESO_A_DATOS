@@ -6,6 +6,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/ALBERTO/_Curso 2021-22/486-Acceso a datos/Libro Acceso a datos - Garceta/Recursos del libro/Recursos Tema2/conectoresSQL/ojdbc6.jar"/>
+	<classpathentry kind="lib" path="Driver_JDBC/ojdbc6.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -1,4 +1,4 @@
-/* Obtiene información de las columnas de una Tabla */
+/* Obtiene informaciï¿½n de las columnas de una Tabla */
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -13,7 +13,7 @@ public class UD2_DDL_GetColumns {
 		  {
 			Class.forName("com.mysql.jdbc.Driver"); //Cargar el driver
 			//Establecemos la conexion con la BD
-	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker");
 	  
 			DatabaseMetaData dbmd = conexion.getMetaData();//Creamos objeto DatabaseMetaData
 	  		System.out.println("COLUMNAS TABLA DEPARTAMENTOS:");
@@ -25,11 +25,11 @@ public class UD2_DDL_GetColumns {
 	  		  String tamCol = columnas.getString("COLUMN_SIZE");  //getString(7)
 	  		  String nula  = columnas.getString("IS_NULLABLE");   //getString(18)
 	  					   			   
-	  		  System.out.printf("Columna: %s, Tipo: %s, Tamaño: %s, ¿Puede ser Nula:? %s %n", nombCol, tipoCol, tamCol, nula);
+	  		  System.out.printf("Columna: %s, Tipo: %s, Tamaï¿½o: %s, ï¿½Puede ser Nula:? %s %n", nombCol, tipoCol, tamCol, nula);
 	  		}
 	
 	  		conexion.close(); //Cerrar conexion   		  	   
-		  } /* Obtiene información de la base de datos y de las tablas y vistas */
+		  } /* Obtiene informaciï¿½n de la base de datos y de las tablas y vistas */
 		  catch (ClassNotFoundException cn) {cn.printStackTrace();} 
 		  catch (SQLException e) {e.printStackTrace();}
 		  
