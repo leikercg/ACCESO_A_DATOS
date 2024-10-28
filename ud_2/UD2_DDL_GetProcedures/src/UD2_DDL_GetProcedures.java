@@ -19,7 +19,7 @@ public class UD2_DDL_GetProcedures {
 
 			Class.forName("com.mysql.jdbc.Driver"); // Cargar el driver
 			//Establecemos la conexion con la BD
-	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto"); 
+	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker"); 
 
 			DatabaseMetaData dbmd = conexion.getMetaData();// Creamos objeto DatabaseMetaData
 			ResultSet proc = dbmd.getProcedures(null, null, null);

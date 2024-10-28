@@ -1,4 +1,4 @@
-/* Obtiene información de las claves primarias de una Tabla */
+/* Obtiene informaciï¿½n de las claves primarias de una Tabla */
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -13,7 +13,7 @@ public class UD2_DDL_GetPrimaryKeys {
 		  {
 			Class.forName("com.mysql.jdbc.Driver"); //Cargar el driver
 			//Establecemos la conexion con la BD
-	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto"); 
+	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker"); 
 	               
 	        //Oracle 
 		    /*Class.forName ("oracle.jdbc.driver.OracleDriver");	
@@ -24,10 +24,13 @@ public class UD2_DDL_GetPrimaryKeys {
 			System.out.println("CLAVE PRIMARIA TABLA DEPARTAMENTOS:");
 	  		System.out.println("===================================");
 			ResultSet pk = dbmd.getPrimaryKeys(null, null, "DEPARTAMENTOS");
-	  		String pkDep="", separador="";
+	  		String pkDep="", separador=";";
 	  		while (pk.next()) {
 	  			   pkDep = pkDep + separador + pk.getString("COLUMN_NAME");//getString(4)
-	  			   separador="+";
+	  			   pkDep = pkDep + separador + pk.getString(1);
+	  			   pkDep = pkDep + separador + pk.getString(2);
+	  			   pkDep = pkDep + separador + pk.getString(3);
+	  			   //separador="+"; // Esto sobra
 	  		 }
 	  		System.out.println("Clave Primaria: " + pkDep);
 

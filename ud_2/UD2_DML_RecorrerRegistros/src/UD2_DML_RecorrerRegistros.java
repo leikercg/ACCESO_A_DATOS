@@ -8,33 +8,30 @@ public class UD2_DML_RecorrerRegistros {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
 			// Establecemos la conexion con la BD
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp", "leiker", "leiker");
 			// Preparamos la consulta
 			Statement sentencia = conexion.createStatement();
-		     String sql = "SELECT * FROM departamentos";
+			String sql = "SELECT emp_no, fecha_alt from empleados where dept_no = 20";
 			ResultSet resul = sentencia.executeQuery(sql);
 
-			resul.last(); //Nos situamos en el último registro
-			System.out.println ("NÚMERO DE FILAS: " + resul.getRow());
+			resul.last(); // Nos situamos en el ï¿½ltimo registro
+			System.out.println("Nï¿½MERO DE FILAS: " + resul.getRow());
 
-			resul.beforeFirst(); //Nos situamos antes del primer registro	  
-					  
-			//Recorremos el resultado para visualizar cada fila
-			while (resul.next()) 
-			    System.out.printf("Fila %d: %d, %s, %s %n",  
-			    		 resul.getRow(),
-			             resul.getInt(1), resul.getString(2), resul.getString(3) );
+			resul.beforeFirst(); // Nos situamos antes del primer registro
 
+			// Recorremos el resultado para visualizar cada fila
+			while (resul.next())
+				System.out.printf("Fila %d: %s, %s  %n", resul.getRow(), resul.getString(1), resul.getString(2)); //Amite tambien el nombre de la columna
 
-			resul.close();     // Cerrar ResultSet
+			resul.close(); // Cerrar ResultSet
 			sentencia.close(); // Cerrar Statement
-			conexion.close();  // Cerrar conexión
+			conexion.close(); // Cerrar conexiï¿½n
 
-		      } catch (ClassNotFoundException cn) {
-			   cn.printStackTrace();
-		      } catch (SQLException e) {
-			   e.printStackTrace();
-		      }
-				  
+		} catch (ClassNotFoundException cn) {
+			cn.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
 	}// fin de main
 }// fin de la clase

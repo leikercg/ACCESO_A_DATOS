@@ -1,4 +1,4 @@
-/* Obtiene información de las claves foráneas de una Tabla */
+/* Obtiene informaciï¿½n de las claves forï¿½neas de una Tabla */
 
 import java.sql.Connection;
 import java.sql.DatabaseMetaData;
@@ -12,7 +12,8 @@ public class UD2_DDL_GetExportedKeys {
 		try {
 			Class.forName("com.mysql.jdbc.Driver"); // Cargar el driver
 			//Establecemos la conexion con la BD
-	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto"); 
+	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker"
+	        		+ ""); 
 
 			// Oracle
 			/*
