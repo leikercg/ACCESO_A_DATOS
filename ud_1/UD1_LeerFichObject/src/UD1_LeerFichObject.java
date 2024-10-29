@@ -8,7 +8,7 @@ public class UD1_LeerFichObject {
 	
 	public static void main(String[] args) throws IOException, ClassNotFoundException {
 		Persona persona; // defino la variable persona
-		File fichero = new File("FichPersona.dat");
+		File fichero = new File("FichPersona2.dat");
 		ObjectInputStream dataIS = new ObjectInputStream(new FileInputStream(fichero));
 
 		int i = 1;

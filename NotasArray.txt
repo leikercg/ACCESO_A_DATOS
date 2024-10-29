@@ -29,3 +29,23 @@ Otros:
 
 clear(): Elimina todos los elementos de la lista.
 subList(fromIndex, toIndex): Retorna una vista de la parte de la lista entre fromIndex y toIndex.
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@ Clonar una lista@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+ArrayList<String> originalList = new ArrayList<>();
+originalList.add("A");
+originalList.add("B");
+
+// Crear una copia utilizando el constructor
+ArrayList<String> shallowCopy = new ArrayList<>(originalList);
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+CLONAR UN ARRAY
+
+int[] array2 = array1.clone();
+
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@

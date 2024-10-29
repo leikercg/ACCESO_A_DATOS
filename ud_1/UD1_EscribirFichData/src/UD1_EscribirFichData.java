@@ -26,3 +26,39 @@ public class UD1_EscribirFichData {
   }
 }
 
+/*FIJAR TAMAÑO DE NOMBRE
+ * 
+ * import java.io.*;
+
+public class UD1_EscribirFichData {
+    public static void main(String[] args) throws IOException {
+
+        File fichero = new File("FichData.dat");
+        DataOutputStream dataOS = new DataOutputStream(new FileOutputStream(fichero));
+
+        String nombres[] = {"Ana", "Luis Miguel", "Alicia", "Pedro", "Manuel", "Andrés",
+                            "Julio", "Antonio", "María Jesús"};
+        int edades[] = {14, 15, 13, 15, 16, 12, 16, 14, 13};
+
+        for (int i = 0; i < edades.length; i++) {
+            // Crear un StringBuffer para ajustar la longitud del nombre a 10 caracteres
+            StringBuffer nombreBuffer = new StringBuffer(nombres[i]);
+            
+            // Asegurar que el nombre tenga exactamente 10 caracteres
+            if (nombreBuffer.length() < 10) {
+                // Añadir espacios si el nombre es menor de 10 caracteres
+                nombreBuffer.setLength(10);
+            } else if (nombreBuffer.length() > 10) {
+                // Truncar si el nombre es mayor de 10 caracteres
+                nombreBuffer.setLength(10);
+            }
+
+            dataOS.writeUTF(nombreBuffer.toString()); // Escribe el nombre ajustado a 10 caracteres
+            dataOS.writeInt(edades[i]);  // Escribe la edad
+        }
+
+        dataOS.close();  // Cerrar el stream
+    }
+}
+*/
+
