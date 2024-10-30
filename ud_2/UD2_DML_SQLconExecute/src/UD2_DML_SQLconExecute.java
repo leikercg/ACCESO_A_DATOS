@@ -8,13 +8,13 @@ public class UD2_DML_SQLconExecute {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
 			// Establecemos la conexion con la BD
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker");
 			
 			String sql="SELECT * FROM departamentos";
 			   Statement sentencia = conexion.createStatement();		   
 			   boolean valor = sentencia.execute(sql);  	// ejecuta la sentencia SQL y devuelve valor booleano
 			   		   
-			   if(valor){			// actua en función del valor devuelto por el método execute
+			   if(valor){			// actua en funciï¿½n del valor devuelto por el mï¿½todo execute
 			    	ResultSet rs = sentencia.getResultSet();
 			   	 while (rs.next())
 			   	    System.out.printf("%d, %s, %s %n",

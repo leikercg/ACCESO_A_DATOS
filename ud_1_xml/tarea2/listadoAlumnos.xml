@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<listadoAlumnos>
+	<nombre>IND2V_DAM</nombre>
+	<alumnos>
+		<alumno tipo = "No repetidor">
+			<nombre>Sara Manzano</nombre>
+			<telefono >777999222</telefono>
+		</alumno>
+		<alumno tipo = "No repetidor">
+			<nombre>Pedro Luna</nombre>
+			<telefono >777999111</telefono>
+		</alumno>
+		<alumno tipo = "Repetidor">
+			<nombre>Ana Lozano</nombre>
+			<telefono >777999000</telefono>
+		</alumno >
+                <alumno tipo = "No Repetidor">
+			<nombre>Ernesto Sevilla </nombre>
+			<telefono >976000000</telefono>
+		</alumno>
+	</alumnos>
+</listadoAlumnos>
