@@ -8,7 +8,7 @@ public class UD2_ProcSubida {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
 			// Establecemos la conexion con la BD
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker");
 
 			 //conexion a ORACLE		  
 		     /*Class.forName ("oracle.jdbc.driver.OracleDriver");	
@@ -20,7 +20,7 @@ public class UD2_ProcSubida {
 			String subida = args[1];//"1000"; // subida
 			
 			// construir orden DE LLAMADA
-			String sql = "{ call subida_sal (?, ?) } ";
+			String sql = "{ call subida_sueldo (?, ?) } ";
 
 			// Preparamos la llamada
 			CallableStatement llamada = conexion.prepareCall(sql);

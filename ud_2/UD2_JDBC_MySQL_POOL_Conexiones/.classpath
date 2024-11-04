@@ -6,9 +6,9 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="src" path="src"/>
-	<classpathentry kind="lib" path="D:/ALBERTO/_Curso 2022_23/0486_Acceso a datos/miAccesoaDatos/UD2 - Manejo de conectores/Conectores JDBC_curso22-23/mysql-connector-java-8.0.27.jar"/>
-	<classpathentry kind="lib" path="D:/ALBERTO/_Curso 2022_23/0486_Acceso a datos/miAccesoaDatos/UD2 - Manejo de conectores/Proyectos_UD2/UD2_JDBC_MySQL_POOL_Conexiones/src/Drivers_Apache_Commons/commons-dbcp2-2.6.0.jar"/>
-	<classpathentry kind="lib" path="D:/ALBERTO/_Curso 2022_23/0486_Acceso a datos/miAccesoaDatos/UD2 - Manejo de conectores/Proyectos_UD2/UD2_JDBC_MySQL_POOL_Conexiones/src/Drivers_Apache_Commons/commons-logging-1.2.jar"/>
-	<classpathentry kind="lib" path="D:/ALBERTO/_Curso 2022_23/0486_Acceso a datos/miAccesoaDatos/UD2 - Manejo de conectores/Proyectos_UD2/UD2_JDBC_MySQL_POOL_Conexiones/src/Drivers_Apache_Commons/commons-pool2-2.6.2.jar"/>
+	<classpathentry kind="lib" path="Driver_JDBC/mysql-connector-java-5.1.38-bin.jar"/>
+	<classpathentry kind="lib" path="src/Drivers_Apache_Commons/commons-dbcp2-2.6.0.jar"/>
+	<classpathentry kind="lib" path="src/Drivers_Apache_Commons/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="src/Drivers_Apache_Commons/commons-pool2-2.6.2.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
