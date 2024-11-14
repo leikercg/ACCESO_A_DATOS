@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 13-nov-2024 9:26:31 by Hibernate Tools 4.3.1 -->
+<hibernate-mapping>
+    <class name="ud3_xampp.Monumentos" table="monumentos" catalog="ud3_xampp" optimistic-lock="version">
+        <id name="codigo" type="byte">
+            <column name="codigo" />
+            <generator class="assigned" />
+        </id>
+        <property name="nombre" type="string">
+            <column name="nombre" length="15" />
+        </property>
+        <property name="localidad" type="string">
+            <column name="localidad" length="15" />
+        </property>
+    </class>
+</hibernate-mapping>
