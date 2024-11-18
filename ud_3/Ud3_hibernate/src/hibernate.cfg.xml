@@ -50,5 +50,8 @@ Contributor(s):
     <property name="hibernate.query.factory_class">org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory</property>
     <mapping resource="ud3_hibernate/Departamentos.hbm.xml"/>
     <mapping resource="ud3_hibernate/Empleados.hbm.xml"/>
+    <mapping resource="ud3_hibernate/hibernate.hbm.xml"/>
+    <mapping resource="ud3_hibernate/Nuevos.hbm.xml"/>
+    <mapping/>
   </session-factory>
 </hibernate-configuration>

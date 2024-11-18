@@ -14,7 +14,7 @@ public class Ejer2_11 {
 			// Establecemos la conexion con la BD
 			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp", "leiker", "leiker");
 
-			String dep = args[0]; // Obtengo el valor del departamento.
+			String dep = args[0]; // Obtengo el valor del departamento. //RUN AS
 			// Preparamos la consulta
 
 			if (ComprobarNumDpto(conexion, Integer.parseInt(dep))) {
