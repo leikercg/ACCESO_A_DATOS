@@ -1,6 +1,6 @@
 ----------------------------------------------------------------
-Mon Nov 18 11:07:43 CET 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0193-3ebe-10df-00001d485098 
+Wed Nov 20 07:34:19 CET 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0193-4847-676a-00001d485190 
 on database directory C:\Users\Alumno\Desktop\acceso_a_datos\ud_2\Examen_ADerby\examen_derby.db with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
 Loaded from file:/C:/Users/Alumno/Desktop/acceso_a_datos/ud_2/Examen_ADerby/Driver_JDBC/derby.jar
 java.vendor=Oracle Corporation
