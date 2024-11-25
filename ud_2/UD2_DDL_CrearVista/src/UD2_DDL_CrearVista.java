@@ -10,7 +10,7 @@ public class UD2_DDL_CrearVista {
 	public static void main(String[] args) throws ClassNotFoundException, SQLException {
 		Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
 		// Establecemos la conexion con la BD
-		Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+		Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker");
 
 		StringBuilder sql = new StringBuilder();
         sql.append("CREATE OR REPLACE VIEW totales ");
@@ -23,10 +23,10 @@ public class UD2_DDL_CrearVista {
 		
 		Statement sentencia = conexion.createStatement();
 		int filas = sentencia.executeUpdate(sql.toString());
-		System.out.printf("Resultado  de la ejecución: %d %n", filas);
+		System.out.printf("Resultado  de la ejecuciï¿½n: %d %n", filas);
 
 		sentencia.close(); // Cerrar Statement
-		conexion.close(); // Cerrar conexión
+		conexion.close(); // Cerrar conexiï¿½n
 
 	}// fin de main
 }// fin de la clase

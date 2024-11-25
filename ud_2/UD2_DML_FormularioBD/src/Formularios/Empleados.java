@@ -109,21 +109,21 @@ public class Empleados extends JFrame {
 		tblEmpleados = new JTable();
 		scrollPane.setViewportView(tblEmpleados);
 		
-		// Llamada al método que carga los datos en la tabla
+		// Llamada al mï¿½todo que carga los datos en la tabla
 		llenarTabla(tablaBD);
 				
 	} // fin Empleados()
 	
 	
-	/* Método que carga los datos en la tabla procedentes de la base de datos */
+	/* Mï¿½todo que carga los datos en la tabla procedentes de la base de datos */
 	private void llenarTabla(String tablaBD) {
 	
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			// Paso 3. Identifico el origen de datos
 			String url = "jdbc:mysql://localhost/ud2_xampp";
-			String usuario = "alberto";
-			String passwd = "alberto";
+			String usuario = "leiker";
+			String passwd = "leiker";
 				
 			// Paso 4. Crea objeto Connection
 			Connection conexion = DriverManager.getConnection(url,usuario,passwd);
@@ -133,10 +133,10 @@ public class Empleados extends JFrame {
 			ResultSet resul = sentencia.executeQuery(consulta);
 			ResultSetMetaData rsmd = (ResultSetMetaData) resul.getMetaData();  	// Para obtener metadatos de la BD
 			
-			// Número de columnas
+			// Nï¿½mero de columnas
 			int nColumnas = rsmd.getColumnCount();
 			
-			// Número de filas
+			// Nï¿½mero de filas
 			String consulta2 = "select count(*) from " + tablaBD;
 			ResultSet resul2 = sentencia.executeQuery(consulta2);
 			resul2.next();
@@ -148,7 +148,7 @@ public class Empleados extends JFrame {
 			
 			for (int i = 1; i <= nColumnas; i++) {
 				rsmd.getColumnName(i);
-				// System.out.println("Añado la columna " + rsmd.getColumnName(i).toUpperCase());
+				// System.out.println("Aï¿½ado la columna " + rsmd.getColumnName(i).toUpperCase());
 				etiquetas[i - 1] = rsmd.getColumnName(i).toUpperCase();
 			}
 			//System.out.println("Filas: " + filas + ", columnas: " + nColumnas);
@@ -158,10 +158,10 @@ public class Empleados extends JFrame {
 			Object[][] datos = new Object[filas][nColumnas];
 			resul = sentencia.executeQuery(consulta);
 			while (resul.next()) {
-			   //Bucle para cada fila, añadir las columnas 
+			   //Bucle para cada fila, aï¿½adir las columnas 
 		         for (int i = 0; i < nColumnas; i++) {
 					datos[numeroFila][i] = resul.getObject(i + 1);
-					// System.out.println("Añado la columna " + i + ", datos " + resul.getString(i + 1));
+					// System.out.println("Aï¿½ado la columna " + i + ", datos " + resul.getString(i + 1));
 				}
 			   numeroFila++;
 			}  // while
@@ -211,22 +211,22 @@ public class Empleados extends JFrame {
 		} catch (SQLException e) {
 			System.out.println("-------------------------------------");
 			// e.printStackTrace();
-			System.out.println("Código de error: " + e.getErrorCode());
+			System.out.println("Cï¿½digo de error: " + e.getErrorCode());
 			System.out.println("Mensaje de error: " + e.getMessage());
 			System.out.println("-------------------------------------");
 		}
 		
 	} // fin llenarTablaEmpleados
 	
-	/* Método que carga los datos en la tabla procedentes de la base de datos */
+	/* Mï¿½todo que carga los datos en la tabla procedentes de la base de datos */
 	public static ArrayList<String> llenarCombo() {
 		ArrayList<String> Lista = new ArrayList<String>();
 	try {	
 		Class.forName("com.mysql.jdbc.Driver");
 		// Paso 3. Identifico el origen de datos
 		String url = "jdbc:mysql://localhost/ud2_xampp";
-		String usuario = "alberto";
-		String passwd = "alberto";
+		String usuario = "leiker";
+		String passwd = "leiker";
 			
 		// Paso 4. Crea objeto Connection
 		Connection conexion = DriverManager.getConnection(url,usuario,passwd);
@@ -252,7 +252,7 @@ public class Empleados extends JFrame {
 	} catch (SQLException e) {
 		System.out.println("-------------------------------------");
 		// e.printStackTrace();
-		System.out.println("Código de error: " + e.getErrorCode());
+		System.out.println("Cï¿½digo de error: " + e.getErrorCode());
 		System.out.println("Mensaje de error: " + e.getMessage());
 		System.out.println("-------------------------------------");
 	}

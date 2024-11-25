@@ -13,7 +13,7 @@ public class UD2_DML_ModificarSalario {
 		try {
 			Class.forName("com.mysql.jdbc.Driver");// Cargar el driver
 			// Establecemos la conexion con la BD
-			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto");
+			Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker");
 
 			String sql = String.format("UPDATE empleados SET salario = salario + %s WHERE dept_no = %s", subida, dep);		   
 			
@@ -24,7 +24,7 @@ public class UD2_DML_ModificarSalario {
 			System.out.printf("Empleados modificados: %d %n", filas);
 			
 			sentencia.close(); // Cerrar Statement
-			conexion.close(); // Cerrar conexión
+			conexion.close(); // Cerrar conexiï¿½n
 
 		} catch (ClassNotFoundException cn) {
 			cn.printStackTrace();
@@ -36,10 +36,10 @@ public class UD2_DML_ModificarSalario {
 				System.out.println("CLAVE AJENA "+ dep + " NO EXISTE");
 			
 			else {
-				System.out.println("HA OCURRIDO UNA EXCEPCIÓN:");
+				System.out.println("HA OCURRIDO UNA EXCEPCIï¿½N:");
 				System.out.println("Mensaje:    " + e.getMessage());
 				System.out.println("SQL estado: " + e.getSQLState());
-				System.out.println("Cód error:  " + e.getErrorCode());
+				System.out.println("Cï¿½d error:  " + e.getErrorCode());
 			}
 		}
 
