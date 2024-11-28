@@ -1,0 +1,8 @@
+1. Abrir CMD en ubicación de sqlite3.slq
+2. Ejecutar "sqlite3" para crear una base de datos.
+	"sqlite3 nombreBBDD.db"
+	".datbases" --->para verla
+3. "sqlite3 nombreBBDD.db < empleados.sql" ---> para introducir una base sql.
+
+
+No tiene usuarios creados, no necesita

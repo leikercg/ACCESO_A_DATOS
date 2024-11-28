@@ -1,0 +1,4 @@
+1. Llegar a ij.bat
+2. ingresar: "  connect 'jdbc:derby:..\nombreBBDD.db;create=true';  " --> se crea en el directorio padre. lo abre, si no existe lo crea
+3. "exit;"---> para salir.
+4. "    connect 'jdbc:derby:..\nombreBBDD.db';   " ---> para abrirla si se ha cerrado.

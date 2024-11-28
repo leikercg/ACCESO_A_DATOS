@@ -1,0 +1,26 @@
+1. Crear una conexión.
+	Indicar driver y bbdd
+
+2. Crear proyecto nuevo
+
+3. Crear hibertnate.conf en default package
+
+	JDBC properties:	
+	hibernate.connection.driver_class	org.gjt.mm.mysql.Driver
+	hibernate.connection.url	jdbc:mysql://localhost/ud2_xampp
+	hibernate.connection.username	leiker
+	hibernate.connection.password	leiker
+	
+	Configuration properties:
+	hibernate.dialect	org.hibernate.dialect.MySQLInnoDBDialect
+	
+	Miscelaneous properties:
+	hibernate.query.factory_class	org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory
+
+4. Pegar el newHibernate en la carpeta del proyecto.
+
+5. Realizar ingeniería inversa.
+
+6. Realizar los pojos.
+
+7. Hacer clean and build.
