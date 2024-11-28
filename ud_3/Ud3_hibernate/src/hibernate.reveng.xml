@@ -43,6 +43,6 @@ Contributor(s):
   <schema-selection match-catalog="ud2_xampp"/>
   <table-filter match-name="departamentos"/>
   <table-filter match-name="empleados"/>
-  <table-filter match-name="nuevos"/> <!--Añadimos manualmente-->
+ 
 
 </hibernate-reverse-engineering>

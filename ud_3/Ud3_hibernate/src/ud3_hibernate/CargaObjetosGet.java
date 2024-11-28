@@ -1,3 +1,5 @@
+package ud3_hibernate;
+
 import org.hibernate.ObjectNotFoundException;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
