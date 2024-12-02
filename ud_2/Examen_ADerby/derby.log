@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Wed Nov 20 07:34:19 CET 2024:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0193-4847-676a-00001d485190 
-on database directory C:\Users\Alumno\Desktop\acceso_a_datos\ud_2\Examen_ADerby\examen_derby.db with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
-Loaded from file:/C:/Users/Alumno/Desktop/acceso_a_datos/ud_2/Examen_ADerby/Driver_JDBC/derby.jar
+Sun Dec 01 23:43:59 CET 2024:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.12.1.1 - (1704137): instance a816c00e-0193-8465-1c7c-00000eb3a9b0 
+on database directory D:\ACCESO_A_DATOS\ACCESO_A_DATOS\ud_2\Examen_ADerby\examen_derby.db with class loader sun.misc.Launcher$AppClassLoader@73d16e93 
+Loaded from file:/D:/ACCESO_A_DATOS/ACCESO_A_DATOS/ud_2/Examen_ADerby/Driver_JDBC/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_202-b08
-user.dir=C:\Users\Alumno\Desktop\acceso_a_datos\ud_2\Examen_ADerby
+user.dir=D:\ACCESO_A_DATOS\ACCESO_A_DATOS\ud_2\Examen_ADerby
 os.name=Windows 10
 os.arch=amd64
 os.version=10.0

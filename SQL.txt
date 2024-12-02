@@ -1,0 +1,89 @@
+SELECT t1.columna1, t2.columna2
+FROM tabla1 t1
+INNER JOIN tabla2 t2
+ON t1.columna_comun = t2.columna_comun;
+-----------------------------------------
+SELECT t1.columna1, t2.columna2
+FROM tabla1 t1
+JOIN tabla2 t2
+USING (columna_comun);
+
+
+
+
+SELECT t1.columna1, t2.columna2
+FROM tabla1 t1
+LEFT JOIN tabla2 t2
+ON t1.columna_comun = t2.columna_comun;
+
+
+
+SELECT t1.columna1, t2.columna2
+FROM tabla1 t1
+RIGHT JOIN tabla2 t2
+ON t1.columna_comun = t2.columna_comun;
+
+
+SELECT t1.columna1, t2.columna2
+FROM tabla1 t1
+FULL OUTER JOIN tabla2 t2
+ON t1.columna_comun = t2.columna_comun;
+
+
+
+SELECT t1.columna1, t2.columna2
+FROM tabla1 t1
+CROSS JOIN tabla2 t2;
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+INSERT INTO nombre_tabla (columna1, columna2, columna3, ...)
+VALUES (valor1, valor2, valor3, ...);
+
+UPDATE nombre_tabla
+SET columna1 = valor1, columna2 = valor2, ...
+WHERE condición;
+
+
+DELETE FROM nombre_tabla
+WHERE condición;
+
+
+
+
+
+executeQuery()	Consultas SELECT	ResultSet
+executeUpdate()	Modificaciones de base de datos: INSERT, UPDATE, DELETE, DDL	int (número de filas afectadas)
+execute()	Para cualquier tipo de consulta	boolean (true si hay ResultSet, false si no)
+
+
+
+@@@@@@@@@@@@@@@@ normal statement@@@@@@@@@@@
+// Ejecutar una consulta SELECT
+String sql = "SELECT * FROM empleados";
+ResultSet resultSet = statement.executeQuery(sql);
+
+// Ejecutar una consulta INSERT, UPDATE o DELETE
+String sqlUpdate = "UPDATE empleados SET salario = salario * 1.1 WHERE departamento = 'HR'";
+int rowsAffected = statement.executeUpdate(sqlUpdate);
+
+
+
+@@@@@@@@@@@@@@@@@@@@@@@ prepared statement @@@@@@@@@@@@@@@@@@@@@@@@@@@
+// Crear un objeto PreparedStatement
+String sql = "SELECT * FROM empleados WHERE departamento = ?";
+PreparedStatement preparedStatement = connection.prepareStatement(sql);
+
+// Establecer valores para los parámetros
+preparedStatement.setString(1, "HR");
+
+// Ejecutar la consulta SELECT
+ResultSet resultSet = preparedStatement.executeQuery();
+
+// Ejecutar una consulta INSERT, UPDATE o DELETE
+String sqlUpdate = "UPDATE empleados SET salario = ? WHERE departamento = ?";
+PreparedStatement preparedStatementUpdate = connection.prepareStatement(sqlUpdate);
+preparedStatementUpdate.setDouble(1, 5000.0);
+preparedStatementUpdate.setString(2, "HR");
+
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+	

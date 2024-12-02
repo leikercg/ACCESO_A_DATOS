@@ -2,3 +2,8 @@
 /ud_3/Hibernate_examen/nbproject/private/
 /ud_3/Hibernate_examen/dist/
 /ud_3/Hibernate_examen/build/
+
+# Ignorar archivos de logs
+*.log
+log/
+*.ctrl
