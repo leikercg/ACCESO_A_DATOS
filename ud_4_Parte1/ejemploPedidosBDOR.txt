@@ -1,0 +1,251 @@
+-- Definición de tipos en BDOR
+
+-- Tipo Articulo
+create or replace TYPE Articulo_tobj AS OBJECT (
+  NumArt    NUMBER,
+  Precio    NUMBER,
+  Iva       NUMBER
+  );
+
+-- Tipo Cliente
+create or replace TYPE Cliente_tobj AS OBJECT (
+  NumCli           NUMBER,
+  NombreCli        VARCHAR2(100),
+  Direccion_obj    Direccion_tobj,
+  ListaTfnos_var   ListaTfnos_tvar,
+
+  ORDER MEMBER FUNCTION
+    comparaPedidosCliente(x IN Cliente_tobj) RETURN INTEGER
+
+) NOT FINAL;
+
+-- Cuerpo de Cliente
+create or replace TYPE BODY Cliente_tobj AS
+  ORDER MEMBER FUNCTION
+  comparaPedidosCliente (x IN Cliente_tobj) RETURN INTEGER IS
+  BEGIN
+    RETURN NumCli - x.NumCli;
+  END;
+END;
+
+-- Tipo Direccion
+create or replace TYPE Direccion_tobj AS OBJECT (
+  Calle        VARCHAR2(100),
+  Ciudad       VARCHAR2(100),
+  Provincia    VARCHAR2(100),
+  CodPostal    VARCHAR2(5)
+  );
+
+-- Tipo Linea
+create or replace TYPE Linea_tobj AS OBJECT (
+  NumLinea      NUMBER,
+  NumArt_ref    REF Articulo_tobj,
+  Cantidad      NUMBER,
+  Descuento     NUMBER
+  );
+
+-- Tipo ListaLineas
+create or replace TYPE ListaLineas_ttan AS TABLE OF Linea_tobj;
+
+-- Tipo ListaTfnos
+create or replace TYPE ListaTfnos_tvar AS VARRAY(10) OF VARCHAR2(20);
+
+-- Tipo Pedido
+create or replace TYPE Pedido_tobj AUTHID CURRENT_USER AS OBJECT (
+  NumPed                NUMBER,
+  NumCli                REF Cliente_tobj,
+  FechaPed              DATE,
+  FechaEnvio            DATE,
+  ListaLineas_tan       ListaLineas_ttan,
+  DireccionEnvio_obj    Direccion_tobj,
+
+  MAP MEMBER FUNCTION
+    getNumPed RETURN NUMBER,
+
+  MEMBER FUNCTION
+    sumaLinArticulos    RETURN NUMBER
+  );
+
+-- Cuerpo de Pedido
+create or replace TYPE BODY Pedido_tobj AS 
+
+MAP MEMBER FUNCTION getNumPed RETURN NUMBER is   
+   BEGIN  
+      RETURN NumPed;   
+   END;    
+
+MEMBER FUNCTION sumaLinArticulos RETURN NUMBER is  
+      i             INTEGER;  
+      ArtVal        Articulo_tobj;  
+      Total         NUMBER := 0; 
+
+   BEGIN  
+      FOR i in 1..SELF.ListaLineas_tan.COUNT LOOP  
+         UTL_REF.SELECT_OBJECT(ListaLineas_tan(i).NumArt_ref,ArtVal);  
+         Total := Total + SELF.ListaLineas_tan(i).Cantidad * ArtVal.Precio;  
+      END LOOP;  
+      RETURN Total;
+   END;
+END;
+
+-- Fin definición de Tipos
+---------------------------
+
+-- Comienza creación de Tablas de objetos
+
+-- Tabla objetos Cliente
+CREATE TABLE Cliente_objtab OF Cliente_tobj (NumCli PRIMARY KEY) 
+   OBJECT IDENTIFIER IS PRIMARY KEY;
+
+-- Tabla objetos Articulo 
+CREATE TABLE Articulo_objtab OF Articulo_tobj (NumArt PRIMARY KEY)
+   OBJECT IDENTIFIER IS PRIMARY KEY;
+
+-- Tabla objetos Pedido
+CREATE TABLE Pedido_objtab OF Pedido_tobj (        
+   PRIMARY KEY (NumPed),                              
+   FOREIGN KEY (NumCli) REFERENCES Cliente_objtab)   
+   OBJECT IDENTIFIER IS PRIMARY KEY
+   NESTED TABLE ListaLineas_tan STORE AS PoLineas_ntab (   
+     (PRIMARY KEY(NESTED_TABLE_ID, NumLinea))               
+     ORGANIZATION INDEX COMPRESS)                           
+   RETURN AS LOCATOR                                        
+   ;
+/  
+
+-- Modificación del cuerpo de Pedido_tobj teniendo en cuenta LOCATOR
+
+create or replace TYPE BODY Pedido_tobj AS 
+
+MAP MEMBER FUNCTION getNumPed RETURN NUMBER is   
+   BEGIN  
+      RETURN NumPed;   
+   END;    
+
+MEMBER FUNCTION sumaLinArticulos RETURN NUMBER is  
+      i             INTEGER;  
+      ArtVal        Articulo_tobj;  
+      Total         NUMBER := 0; 
+
+   BEGIN  
+      IF (UTL_COLL.IS_LOCATOR(ListaLineas_tan)) -- Comprueba el localizador
+         THEN
+            SELECT SUM(L.Cantidad * L.NumArt_ref.Precio) INTO Total
+            FROM   TABLE(CAST(ListaLineas_tan AS ListaLineas_ttan)) L;
+        ELSE
+            FOR i in 1..SELF.ListaLineas_tan.COUNT LOOP  
+            UTL_REF.SELECT_OBJECT(ListaLineas_tan(i).NumArt_ref,ArtVal);  
+            Total := Total + SELF.ListaLineas_tan(i).Cantidad * ArtVal.Precio;  
+         END LOOP;  
+      END IF;  
+   RETURN Total;  
+   END;  
+END;     
+/
+
+-- Incluir restricción de referencia en Polineas_ntab
+ALTER TABLE PoLineas_ntab
+   ADD (SCOPE FOR (NumArt_ref) IS Articulo_objtab) ;
+
+-- Inserción de valores en las tablas
+-- Inserta Artículos
+INSERT INTO Articulo_objtab VALUES(1004, 6750.00, 21) ;
+INSERT INTO Articulo_objtab VALUES(1011, 4500.23, 21) ;
+INSERT INTO Articulo_objtab VALUES(1534, 2234.00, 21) ;
+INSERT INTO Articulo_objtab VALUES(1535, 3456.23, 21) ;
+
+-- Inserta Clientes
+INSERT INTO Cliente_objtab
+  VALUES (
+    1, 'Jean Nance',
+    Direccion_tobj('2 Avocet Drive', 'Redwood Shores', 'CALIFORNIA', '95054'),
+    ListaTfnos_tvar('415-555-1212')
+    ) ;
+
+INSERT INTO Cliente_objtab
+  VALUES (
+    2, 'John Nike',
+    Direccion_tobj('323 College Drive', 'Edison', 'NEW JERSEY', '08820'),
+    ListaTfnos_tvar('609-555-1212','201-555-1212')
+    ) ;
+
+-- Inserta Pedidos
+INSERT INTO Pedido_objtab
+  SELECT  1001,                     /* NumPed 1001 */
+          REF(C),                   /* NumCli REF al NumCli 1 */
+          SYSDATE,                  /* FechaPed SYSDATE */
+          '10-MAYO-1999',           /* FechaEnvio 10-MAYO-1999 */
+          ListaLineas_ttan(),       /* ListaLineas_tan Vacía */
+          NULL                      /* DireccionEnvio_obj NULL */
+   FROM   Cliente_objtab C
+   WHERE  C.NumCli = 1 ;
+
+-- Inserta Lineas de pedido
+INSERT INTO TABLE (
+  SELECT  P.ListaLineas_tan
+   FROM   Pedido_objtab P
+   WHERE  P.NumPed = 1001       /* NumPed 1001 */
+  )
+  SELECT  01,                   /* NumLinea 01 */
+          REF(S),               /* NumArt_ref 1534 */
+          12,                   /* Cantidad 12 */
+          0                     /* Descuento 0 */
+   FROM   Articulo_objtab S
+   WHERE  S.NumArt = 1534 ;
+
+
+-- Inserta nuevo Pedidos y varias Lineas
+INSERT INTO Pedido_objtab
+  SELECT  2001, REF(C),
+          SYSDATE, '20-MAYO-1997',
+          ListaLineas_ttan(),           /* Usa el constructor vacío */
+          Direccion_tobj('55 Madison Ave','Madison','WISCONSIN','53715')
+   FROM   Cliente_objtab C
+   WHERE  C.NumCli = 2 ;
+
+INSERT INTO TABLE (
+  SELECT  P.ListaLineas_tan FROM   Pedido_objtab P  WHERE  P.NumPed = 1001
+  )
+  SELECT  02, REF(S), 10, 10 FROM   Articulo_objtab S  WHERE  S.NumArt = 1535 ;
+
+INSERT INTO TABLE (
+  SELECT  P.ListaLineas_tan  FROM  Pedido_objtab P  WHERE  P.NumPed = 2001
+  )
+  SELECT  10, REF(S), 1, 0   FROM   Articulo_objtab S  WHERE  S.NumArt = 1004 ;
+
+INSERT INTO TABLE (
+  SELECT  P.ListaLineas_tan  FROM  Pedido_objtab P  WHERE  P.NumPed = 2001
+  )
+  VALUES (11, (SELECT REF(S)  FROM  Articulo_objtab S  WHERE S.NumArt = 1011),
+        2, 1) ;
+
+-------------
+-- Consultas
+
+-- Ordena Pedidos
+SELECT  p.NumPed
+ FROM   Pedido_objtab p
+ ORDER BY VALUE(p) ;
+ 
+-- Cliente y Líneas de un pedido determinado
+SELECT  DEREF(p.numcli), p.direccionenvio_obj, p.numped, 
+        p.fechaped, p.listalineas_tan
+ FROM   Pedido_objtab p
+ WHERE  p.NumPed = 1001 ;
+
+
+-- Valor Total de los pedidos
+SELECT   p.NumPed, p.sumaLinArticulos()
+ FROM    Pedido_objtab p
+ 
+
+-- Cliente y Linea de pedido donde aprece un Artículo determinado
+SELECT   po.numped, po.numcli.numcli,
+         CURSOR (
+           SELECT  *
+            FROM   TABLE (po.ListaLineas_tan) L
+            WHERE  L.NumArt_ref.NumArt = 1004
+           )
+ FROM    Pedido_objtab po ; 
+ 
+

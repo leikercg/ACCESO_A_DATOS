@@ -2,12 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-            <file>file:/D:/ACCESO_A_DATOS/ACCESO_A_DATOS/ud_3/Ud3_hibernate/src/hibernate.cfg.xml</file>
-            <file>file:/D:/ACCESO_A_DATOS/ACCESO_A_DATOS/ud_3/Ud3_hibernate/src/ud3_hibernate/CargaObjetosGet.java</file>
-            <file>file:/D:/ACCESO_A_DATOS/ACCESO_A_DATOS/ud_3/Ud3_hibernate/src/ud3_hibernate/NewHibernateUtil.java</file>
-            <file>file:/D:/ACCESO_A_DATOS/ACCESO_A_DATOS/ud_3/Ud3_hibernate/src/ud3_hibernate/CargaObjetos.java</file>
-            <file>file:/D:/ACCESO_A_DATOS/ACCESO_A_DATOS/ud_3/Ud3_hibernate/src/MainSesion.java</file>
-        </group>
+        <group/>
     </open-files>
 </project-private>

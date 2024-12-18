@@ -14,18 +14,20 @@ public class UD2_DDL_ResultSetMetaData {
 
 			Class.forName("com.mysql.jdbc.Driver"); // Cargar el driver
 			//Establecemos la conexion con la BD
-	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","alberto", "alberto"); 
+	        Connection conexion = DriverManager.getConnection("jdbc:mysql://localhost/ud2_xampp","leiker", "leiker"); 
              
 			Statement sentencia = conexion.createStatement();
 			ResultSet rs = sentencia.executeQuery("SELECT * FROM departamentos");	
 			
-			// Crea el objeto ResultSetMetaData para después usar sus métodos y así obtener
+			
+			// Crea el objeto ResultSetMetaData para despuï¿½s usar sus mï¿½todos y asï¿½ obtener
 			// metadatos de las columnas devueltas por la consulta
 			ResultSetMetaData rsmd = rs.getMetaData();			
 			
+			
 			int nColumnas = rsmd.getColumnCount();
 			String nula;
-			System.out.printf("Número de columnas recuperadas: %d%n", nColumnas);
+			System.out.printf("Nï¿½mero de columnas recuperadas: %d%n", nColumnas);
 			for (int i = 1; i <= nColumnas; i++) {
 				System.out.printf("Columna %d: %n ", i);
 				System.out.printf("  Nombre: %s %n   Tipo: %s %n ", rsmd.getColumnName(i),  rsmd.getColumnTypeName(i));
@@ -35,7 +37,7 @@ public class UD2_DDL_ResultSetMetaData {
 					nula = "SI";
 				
 				System.out.printf("  Puede ser nula?: %s %n ", nula);			
-				System.out.printf("  Máximo ancho de la columna: %d %n",
+				System.out.printf("  Mï¿½ximo ancho de la columna: %d %n",
 						 rsmd.getColumnDisplaySize(i));
 			} // for
 			

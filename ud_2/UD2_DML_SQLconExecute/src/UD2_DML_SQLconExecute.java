@@ -14,7 +14,7 @@ public class UD2_DML_SQLconExecute {
 			   Statement sentencia = conexion.createStatement();		   
 			   boolean valor = sentencia.execute(sql);  	// ejecuta la sentencia SQL y devuelve valor booleano
 			   		   
-			   if(valor){			// actua en funci�n del valor devuelto por el m�todo execute
+			   if(valor){			// actua en funci�n del valor devuelto por el m�todo execute, false seria si es delete, insert o uodate
 			    	ResultSet rs = sentencia.getResultSet();
 			   	 while (rs.next())
 			   	    System.out.printf("%d, %s, %s %n",
