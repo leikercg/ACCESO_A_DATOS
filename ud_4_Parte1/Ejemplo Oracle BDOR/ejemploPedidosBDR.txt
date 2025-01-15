@@ -1,0 +1,69 @@
+-- Creación de las tablas UD4 - Ejemplo gestión pedidos
+-- Tablas de acuerdo al modelo Relacional
+
+-- Tabla Clientes_mr
+CREATE TABLE Clientes_mr (
+  NumCli               NUMBER NOT NULL,
+  NombreCli            VARCHAR2(100) NOT NULL,
+  Calle                VARCHAR2(100) NOT NULL,
+  Ciudad               VARCHAR2(100) NOT NULL,
+  Provincia            VARCHAR2(100) NOT NULL,
+  CodPostal            VARCHAR2(5) NOT NULL,
+  Tfno1                VARCHAR2(20),
+  Tfno2                VARCHAR2(20),
+  Tfno3                VARCHAR2(20),
+  PRIMARY KEY (NumCli));
+
+-- Tabla Pedidos_mr
+CREATE TABLE Pedidos_mr (    
+   NumPed	NUMBER,  
+   NumCli      	NUMBER references Clientes_mr,
+   FechaPed   	DATE,   
+   FechaEnvio   DATE,    
+   CalleEnvio   VARCHAR2(100),    
+   CiudadEnvio  VARCHAR2(100),    
+   ProvEnvio   	VARCHAR2(100),    
+   CpEnvio    	VARCHAR2(20),    
+   PRIMARY KEY(NumPed)); 
+
+-- Tabla Articulos_mr
+CREATE TABLE Articulos_mr (
+  NumArt	NUMBER PRIMARY KEY,
+  Precio        NUMBER,
+  Iva      	NUMBER);
+
+-- Tabla Lineas_mr
+CREATE TABLE Lineas_mr (
+  NumLinea		NUMBER,
+  NumPed             	NUMBER REFERENCES Pedidos_mr,
+  NumArt	        NUMBER REFERENCES Articulos_mr,
+  Cantidad             	NUMBER,
+  Descuento             NUMBER,
+  PRIMARY KEY (NumPed, NumLinea));
+
+-- Inserta datos de Artículos
+INSERT INTO Articulos_mr VALUES(1004, 6750.00, 21);
+INSERT INTO Articulos_mr VALUES(1011, 4500.23, 21);
+INSERT INTO Articulos_mr VALUES(1534, 2234.00, 21);
+INSERT INTO Articulos_mr VALUES(1535, 3456.23, 21);
+
+-- Inserta datos de Clientes
+INSERT INTO Clientes_mr VALUES (1, 'Jean Nance', '2 Avocet Drive',
+	 'Redwood Shores', 'CALIFORNIA', '95054', '415-555-1212', NULL, NULL);
+
+INSERT INTO Clientes_mr VALUES (2, 'John Nike', '323 College Drive',
+         'Edison', 'NEW JERSEY', '08820', '609-555-1212', '201-555-1212', NULL);
+
+-- Inserta Pedidos
+INSERT INTO Pedidos_mr VALUES (1001, 1, SYSDATE, '10-MAY-1997',
+          NULL, NULL, NULL, NULL);
+
+INSERT INTO Pedidos_mr VALUES (2001, 2, SYSDATE, '20-MAY-1997',
+         '55 Madison Ave', 'Madison', 'WISCONSIN', '53715');
+
+-- Inserta Lineas de pedido
+INSERT INTO Lineas_mr VALUES(01, 1001, 1534, 12,  0);
+INSERT INTO Lineas_mr VALUES(02, 1001, 1535, 10, 10);
+INSERT INTO Lineas_mr VALUES(01, 2001, 1004,  1,  0);
+INSERT INTO Lineas_mr VALUES(02, 2001, 1011,  2,  1);
+
