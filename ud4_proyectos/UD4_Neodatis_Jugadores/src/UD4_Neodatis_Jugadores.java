@@ -1,4 +1,4 @@
-// Operaciones básicas sobre Neodatis
+// Operaciones bï¿½sicas sobre Neodatis
 import org.neodatis.odb.ODB;
 import org.neodatis.odb.ODBFactory;
 import org.neodatis.odb.Objects;
@@ -13,7 +13,7 @@ public class UD4_Neodatis_Jugadores {
 		Jugador j4 = new Jugador("Alicia", "tenis", "Madrid", 14);
 		
 		// Abrir BD
-		ODB odb = ODBFactory.open("neodatis.test");
+		ODB odb = ODBFactory.open("neodatis1.test");
 
 		// Almacenamos los onjetos jugador en la base de datos
 		odb.store(j1); 
@@ -26,7 +26,7 @@ public class UD4_Neodatis_Jugadores {
 		Objects<Jugador> objetos = odb.getObjects(Jugador.class);
 		System.out.printf("%d Jugadores: %n", objetos.size());
 		int i = 1;
-		// Recorre la colección de objetos		
+		// Recorre la colecciï¿½n de objetos		
 		while(objetos.hasNext()){
 			Jugador jug = objetos.next();	// Asigna cada elemento de la coleccion a una instancia de la clase Jugador
 			System.out.printf("%d: %s, %s, %s %n", i++, jug.getNombre(), jug.getDeporte(),	jug.getCiudad(), jug.getEdad());   
