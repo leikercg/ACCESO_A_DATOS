@@ -1,9 +1,9 @@
 /* 	Crea un servidor Neodatis en el puerto 8000
 * 	asignando el nombre "base1" al fichero de la BBDD
-* 	Las aplicaciones clientes tendrán que usar ese nombre y puerto
-* 	para después conectarse a la BBDD Neodatis.
-*   Para que se pueda iniciar el servidor, el fichero de la BBDD tendrá
-*   que existir en la ubicación especificada y el puerto tendrá que estar libre.
+* 	Las aplicaciones clientes tendrï¿½n que usar ese nombre y puerto
+* 	para despuï¿½s conectarse a la BBDD Neodatis.
+*   Para que se pueda iniciar el servidor, el fichero de la BBDD tendrï¿½
+*   que existir en la ubicaciï¿½n especificada y el puerto tendrï¿½ que estar libre.
 */
 
 import org.neodatis.odb.ODBFactory;
@@ -17,8 +17,8 @@ public class UD4_Neodatis_Servidor {
 		// Crea el servidor en el puerto 8000
 		server = ODBFactory.openServer(8000);
 		// Abrir BD
-		server.addBase("base1", "D:/BBDD/neodatisServer.test");
-		// Se inicia el servidor ejecutándose en segundo plano
+		server.addBase("base1", "D:/BBDD/neodatisServer.test"); // atender peticiones que lleguen con este nombre
+		// Se inicia el servidor ejecutï¿½ndose en segundo plano
 		server.startServer(true);
 		
 		System.out.println("Servidor iniciado....");
