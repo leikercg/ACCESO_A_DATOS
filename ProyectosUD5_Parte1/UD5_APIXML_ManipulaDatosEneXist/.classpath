@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8">
+		<attributes>
+			<attribute name="module" value="true"/>
+		</attributes>
+	</classpathentry>
+	<classpathentry kind="lib" path="drivers/exist.jar"/>
+	<classpathentry kind="lib" path="drivers/log4j-1.2.15.jar"/>
+	<classpathentry kind="lib" path="drivers/ws-commons-util-1.0.2.jar"/>
+	<classpathentry kind="lib" path="drivers/xml-apis-1.3.04.jar"/>
+	<classpathentry kind="lib" path="drivers/xmldb.jar"/>
+	<classpathentry kind="lib" path="drivers/xmlrpc-client-3.1.1.jar"/>
+	<classpathentry kind="lib" path="drivers/xmlrpc-common-3.1.1.jar"/>
+	<classpathentry kind="lib" path="drivers/_xmlrpc-server-3.1.1.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

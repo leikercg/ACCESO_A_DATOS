@@ -1,0 +1,3 @@
+{ "_id" : { "$oid" : "576f2426618181b3bbad7ec2" }, "nombre" : "Ana", "teléfono" : 5.45656885E8, "curso" : "1DAM", "nota" : 7.0 }
+{ "_id" : { "$oid" : "576f2426618181b3bbad7ec3" }, "nombre" : "Marleni", "teléfono" : 3446500.0, "curso" : "1DAM", "nota" : 8.0 }
+{ "_id" : { "$oid" : "576f2426618181b3bbad7ec4" }, "nombre" : "Juanito", "teléfono" : 5.5667788E7, "curso" : "2DAM", "nota" : 6.0 }

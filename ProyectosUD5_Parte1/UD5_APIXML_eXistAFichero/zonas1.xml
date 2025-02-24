@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><fila_empleado>
+    <EMP_NO>7782</EMP_NO>
+	<APELLIDO>CEREZO</APELLIDO>
+	<OFICIO>DIRECTOR</OFICIO>
+	<DIR>7839</DIR>
+	<FECHA_ALT>1991-06-09</FECHA_ALT>
+	<SALARIO>3285</SALARIO>
+	<DEPT_NO>10</DEPT_NO>
+  </fila_empleado>
