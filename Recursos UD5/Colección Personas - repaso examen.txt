@@ -1,0 +1,39 @@
+--Colección Personas
+db.personas.drop();
+db.personas.insert({nombre: "Alicia Ramos",
+                    direccion: {población: "Madrid", calle : "Avda Toledo 10"},
+						salario: 1200,
+						primas: [20,30,40],
+						edad:50
+						})
+						
+db.personas.insert({nombre: "Juan Gil",
+                    direccion: {población: "Madrid", calle : "Mayor 12"},
+						salario: 1400,
+						primas: [120,130,40],
+						edad: 30
+						})
+
+db.personas.insert({nombre: "Raquel García",
+                    direccion: {población: "Toledo", calle : "Ocaña 22"},
+						salario: 1500,
+						primas: [60, 30, 80],
+						edad: 45
+						})
+db.personas.insert({nombre: "Fernando Romo",
+                    direccion: {población: "Talavera", calle : "Las cañas 2"},
+						salario: 1300,
+						edad: 43
+						})
+db.personas.insert({nombre: "María Suárez",
+                    direccion: {población: "Toledo", calle : "Av Madrid 32"},
+						salario: 1600,
+						primas: [30, 70, 80],
+						edad: 55
+						})	
+
+db.personas.insert({nombre: "Santiago Gómez",
+                    direccion: {población: "Toledo", calle : "Av Madrid 32"},
+						salario: 1600,
+						edad: 55
+						})						

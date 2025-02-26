@@ -20,7 +20,7 @@ public class UD5_APIXML_AccesoAeXist {
   		Collection col = null;  
 	  	
   		// Define URI a la Colecci�n de documentos XML
-		String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/ColeccionesXML/ColeccionPruebas", usu = "admin", pwd = "alumno"; 
+		String URI = "xmldb:exist://localhost:8080/exist/xmlrpc/db/ColeccionesXML/ColeccionPruebas", usu = "admin", pwd = "alumno"; // indicar desde donde empezar buscar
 		try {
 			// Carga el driver para eXist
 			Class<?> c = Class.forName("org.exist.xmldb.DatabaseImpl");			

@@ -41,6 +41,7 @@ public class UD5_JSON_accesoAMongoDB {
 		for (int i = 0; i < consulta.size(); i++) {
 			System.out.println(" - " + consulta.get(i).toString());
 			
+			// Para consultar dentro de la collección hay que crear otro documento para acceder acceder a cada registro
 			Document doc = consulta.get(i); // bajamos un escalán más, recupera un documento
 			System.out.println("precio: "+ doc.get("pvp").toString()); 
 			System.out.println("precio: "+ doc.getString("nombre")); 

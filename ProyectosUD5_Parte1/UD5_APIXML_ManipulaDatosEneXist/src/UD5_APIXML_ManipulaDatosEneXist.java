@@ -37,6 +37,9 @@ public class UD5_APIXML_ManipulaDatosEneXist {
 									+ "<DNOMBRE>CONTABILIDAD</DNOMBRE> "
 									+ "<LOC>ALBACETE</LOC></DEP_ROW>"
 									+ "into doc('/ColeccionPruebas/departamentos.xml')/departamentos";
+				
+				System.out.println(consultaXPath);
+				
 				ResourceSet resultSet = servicio.query(consultaXPath);
 				System.out.println("INSERTADO DEPARTAMENTO.");
 				
@@ -44,6 +47,7 @@ public class UD5_APIXML_ManipulaDatosEneXist {
 				consultaXPath = "update value "
 									+ "doc('/ColeccionPruebas/departamentos.xml')/departamentos/filadpto[DEPT_NO = 50]/LOC "
 									+ "with 'GUADALAJARA'";
+				
 				resultSet = servicio.query(consultaXPath);
 				System.out.println("MODIFICADA LOCALIDAD EN DEPARTAMENTO.");
 								
